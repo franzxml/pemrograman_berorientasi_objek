@@ -15,31 +15,30 @@ if ($page === 'home') {
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
   <style>
     :root{
-      --bg: #0b1020;
-      --muted: #9aa3b2;
-      --brand: #38bdf8;
-      --accent: #a78bfa;
+      --bg: #f8f9fa;
+      --text: #212529;
+      --muted: #6c757d;
+      --brand: #0d6efd;
+      --accent: #6610f2;
     }
     body{
-      background:
-        radial-gradient(600px 300px at 20% -10%, rgba(56,189,248,.15), transparent 40%),
-        radial-gradient(800px 400px at 120% -20%, rgba(167,139,250,.15), transparent 40%),
-        var(--bg);
-      color:#e6eaf2;
+      background: var(--bg);
+      color: var(--text);
       min-height:100vh;
     }
-    .glass{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);backdrop-filter:blur(10px)}
+    .glass{background:rgba(255,255,255,.8);border:1px solid rgba(0,0,0,.05);backdrop-filter:blur(6px)}
     .brand{color:var(--brand)}
     .accent{color:var(--accent)}
-    .card-link{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08)}
-    .card-link:hover{background:rgba(255,255,255,.09)}
+    .card-link{background:#fff;border:1px solid rgba(0,0,0,.08);transition:.2s}
+    .card-link:hover{background:#f1f3f5}
     a{text-decoration:none}
+    .navbar{background:#fff !important;border-bottom:1px solid rgba(0,0,0,.05)}
   </style>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg glass sticky-top py-3">
+  <nav class="navbar navbar-expand-lg sticky-top py-3">
     <div class="container">
-      <a class="navbar-brand fw-semibold text-white" href="/">
+      <a class="navbar-brand fw-semibold text-dark" href="/">
         <i class="bi bi-braces brand"></i>
         <span class="ms-2">Pemrograman Berorientasi Objek</span>
       </a>
@@ -48,36 +47,38 @@ if ($page === 'home') {
       </button>
       <div class="collapse navbar-collapse" id="nav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link text-white-50" href="?page=home">Home</a></li>
-          <li class="nav-item"><a class="nav-link text-white-50" href="#latihan">Latihan</a></li>
-          <li class="nav-item"><a class="nav-link text-white-50" href="#tugas">Tugas</a></li>
-          <li class="nav-item"><a class="nav-link text-white-50" href="#inheritance">Inheritance</a></li>
-          <li class="nav-item"><a class="nav-link text-white-50" href="#pertemuan5">Pertemuan 5</a></li>
+          <li class="nav-item"><a class="nav-link text-dark-50" href="?page=home">Home</a></li>
+          <li class="nav-item"><a class="nav-link text-dark-50" href="#latihan">Latihan</a></li>
+          <li class="nav-item"><a class="nav-link text-dark-50" href="#tugas">Tugas</a></li>
+          <li class="nav-item"><a class="nav-link text-dark-50" href="#inheritance">Inheritance</a></li>
+          <li class="nav-item"><a class="nav-link text-dark-50" href="#pertemuan5">Pertemuan 5</a></li>
+          <li class="nav-item"><a class="nav-link text-dark-50" href="#pertemuan6">Praktikum 6</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <header class="py-5">
+  <header class="py-5 bg-light">
     <div class="container">
       <div class="row align-items-center g-4">
         <div class="col-lg-7">
           <h1 class="display-5 fw-bold">Halo! 👋</h1>
-          <p class="lead text-white-50">Ini adalah beranda indeks untuk latihan dan tugas. Dibuat oleh Frans Maylandgo Saragih.</p>
+          <p class="lead text-muted">Ini adalah beranda indeks untuk latihan dan tugas. Dibuat oleh Frans Maylandgo Saragih.</p>
           <div class="d-flex gap-2">
             <a href="#latihan" class="btn btn-primary btn-lg"><i class="bi bi-rocket-takeoff"></i> Ke Latihan</a>
-            <a href="#tugas" class="btn btn-outline-light btn-lg"><i class="bi bi-journal-code"></i> Ke Tugas</a>
-            <a href="#inheritance" class="btn btn-outline-light btn-lg"><i class="bi bi-diagram-3"></i> Ke Inheritance</a>
-            <a href="#pertemuan5" class="btn btn-outline-light btn-lg"><i class="bi bi-people"></i> Ke Pertemuan 5</a>
+            <a href="#tugas" class="btn btn-outline-dark btn-lg"><i class="bi bi-journal-code"></i> Ke Tugas</a>
+            <a href="#inheritance" class="btn btn-outline-dark btn-lg"><i class="bi bi-diagram-3"></i> Ke Inheritance</a>
+            <a href="#pertemuan5" class="btn btn-outline-dark btn-lg"><i class="bi bi-people"></i> Ke Pertemuan 5</a>
+            <a href="#pertemuan6" class="btn btn-outline-dark btn-lg"><i class="bi bi-flower3"></i> Ke Praktikum 6</a>
           </div>
         </div>
         <div class="col-lg-5">
-          <div class="p-4 rounded-4 glass border text-white-50">
+          <div class="p-4 rounded-4 glass border">
             <div class="d-flex align-items-center mb-2">
               <i class="bi bi-info-circle brand fs-2"></i>
-              <h2 class="h5 ms-2 mb-0 text-white">Informasi</h2>
+              <h2 class="h5 ms-2 mb-0 text-dark">Informasi</h2>
             </div>
-            <ul class="small mb-0">
+            <ul class="small mb-0 text-muted">
               <li>Nama: Frans Maylandgo Saragih</li>
               <li>NIM: H1101241059</li>
             </ul>
@@ -90,13 +91,15 @@ if ($page === 'home') {
   <main class="pb-5">
     <div class="container">
       <div class="row g-4">
+
+        <!-- Latihan -->
         <section id="latihan" class="col-12">
           <div class="glass rounded-4 p-4">
             <div class="d-flex align-items-center mb-3">
               <i class="bi bi-mortarboard fs-3 brand"></i>
-              <h2 class="h4 ms-2 mb-0 text-white">Latihan pada pertemuan 3</h2>
+              <h2 class="h4 ms-2 mb-0 text-dark">Latihan pada pertemuan 3</h2>
             </div>
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-2 g-3">
+            <div class="row row-cols-1 row-cols-md-2 g-3">
               <div class="col">
                 <a class="card-link rounded-3 p-3 d-flex justify-content-between align-items-center" href="/tugas_pertemuan_tiga/persegi_panjang.php">
                   <span><i class="bi bi-square"></i> Latihan Satu — Persegi Panjang</span>
@@ -125,13 +128,14 @@ if ($page === 'home') {
           </div>
         </section>
 
+        <!-- Tugas -->
         <section id="tugas" class="col-12">
           <div class="glass rounded-4 p-4">
             <div class="d-flex align-items-center mb-3">
               <i class="bi bi-journal-text fs-3 accent"></i>
-              <h2 class="h4 ms-2 mb-0 text-white">Tugas Properti Method dan Constructor</h2>
+              <h2 class="h4 ms-2 mb-0 text-dark">Tugas Properti Method dan Constructor</h2>
             </div>
-            <p class="text-white-50">Tugas <em>Properti, Method,</em> &amp; <em>Constructor</em>:</p>
+            <p class="text-muted">Tugas <em>Properti, Method,</em> &amp; <em>Constructor</em>:</p>
             <div class="row row-cols-1 row-cols-md-2 g-3">
               <div class="col">
                 <a class="card-link rounded-3 p-3 d-flex justify-content-between align-items-center" href="/tugas_properti_method_dan_constructor/class_segitiga.php">
@@ -149,11 +153,12 @@ if ($page === 'home') {
           </div>
         </section>
 
+        <!-- Inheritance -->
         <section id="inheritance" class="col-12">
           <div class="glass rounded-4 p-4">
             <div class="d-flex align-items-center mb-3">
               <i class="bi bi-diagram-3 fs-3 brand"></i>
-              <h2 class="h4 ms-2 mb-0 text-white">Latihan Inheritance</h2>
+              <h2 class="h4 ms-2 mb-0 text-dark">Latihan Inheritance</h2>
             </div>
             <div class="row row-cols-1 row-cols-md-2 g-3">
               <div class="col">
@@ -166,11 +171,12 @@ if ($page === 'home') {
           </div>
         </section>
 
+        <!-- Pertemuan 5 -->
         <section id="pertemuan5" class="col-12">
           <div class="glass rounded-4 p-4">
             <div class="d-flex align-items-center mb-3">
               <i class="bi bi-people fs-3 accent"></i>
-              <h2 class="h4 ms-2 mb-0 text-white">Pertemuan 5 — Class Mahasiswa</h2>
+              <h2 class="h4 ms-2 mb-0 text-dark">Pertemuan 5 — Class Mahasiswa</h2>
             </div>
             <div class="row row-cols-1 row-cols-md-2 g-3">
               <div class="col">
@@ -188,14 +194,33 @@ if ($page === 'home') {
             </div>
           </div>
         </section>
+
+        <!-- Pertemuan 6 -->
+        <section id="pertemuan6" class="col-12">
+          <div class="glass rounded-4 p-4">
+            <div class="d-flex align-items-center mb-3">
+              <i class="bi bi-flower3 fs-3 brand"></i>
+              <h2 class="h4 ms-2 mb-0 text-dark">Praktikum 6 — Class Bunga</h2>
+            </div>
+            <div class="row row-cols-1 row-cols-md-2 g-3">
+              <div class="col">
+                <a class="card-link rounded-3 p-3 d-flex justify-content-between align-items-center" href="/pertemuan_6/class_bunga.php">
+                  <span><i class="bi bi-flower3"></i> Class Bunga</span>
+                  <i class="bi bi-arrow-right-short fs-4"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
       </div>
     </div>
   </main>
 
-  <footer class="py-4 mt-auto">
-    <div class="container text-center text-white-50 small">
+  <footer class="py-4 mt-auto bg-light border-top">
+    <div class="container text-center text-muted small">
       <div> <?php echo date('Y'); ?> Pemrograman Berorientasi Objek <i class="bi bi-heart-fill accent"></i></div>
-      <div class="mt-1"><a class="text-decoration-underline text-white-50" href="https://getbootstrap.com/">Bootstrap</a> · <a class="text-decoration-underline text-white-50" href="https://icons.getbootstrap.com/">Bootstrap Icons</a></div>
+      <div class="mt-1"><a class="text-decoration-underline text-muted" href="https://getbootstrap.com/">Bootstrap</a> · <a class="text-decoration-underline text-muted" href="https://icons.getbootstrap.com/">Bootstrap Icons</a></div>
     </div>
   </footer>
 
