@@ -2,7 +2,7 @@ name: Deploy to Hugging Face
 
 on:
   push:
-    branches: ["main"]   # otomatis jalan setiap ada push ke branch main
+    branches: ["main"]
 
 jobs:
   deploy:
@@ -24,16 +24,18 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git config --global user.name "github-actions[bot]"
 
-          # clone Space ke folder sementara di /tmp
+          # clone Space ke folder sementara
           git clone https://huggingface.co/spaces/franzxml/pemrograman_berorientasi_objek /tmp/deploy_space
           
-          # hapus semua isi lama di dalam Space
+          # hapus semua isi lama
           rm -rf /tmp/deploy_space/*
           
-          # copy isi repo GitHub ke dalam deploy_space
+          # copy isi repo ke Space
           cp -r . /tmp/deploy_space/
           
           cd /tmp/deploy_space
           git add .
           git commit -m "Deploy from GitHub Actions" || echo "No changes to commit"
-          git push https://USER:$HF_TOKEN@huggingface.co/spaces/franzxml/pemrograman_berorientasi_objek main
+          
+          # pakai --force agar menimpa remote branch
+          git push --force https://USER:$HF_TOKEN@huggingface.co/spaces/franzxml/pemrograman_berorientasi_objek main
