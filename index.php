@@ -1,8 +1,5 @@
 <?php
-// index.php adalah pintu masuk utama aplikasi.
-// Halaman ini akan menampilkan menu untuk masuk ke halaman lain.
-
-// Kita tampilkan HTML sederhana
+// index.php adalah halaman utama yang menjadi menu untuk semua tugas
 ?>
 <!DOCTYPE html>
 <html lang="id">
@@ -14,9 +11,12 @@
     <h1>Selamat Datang di Pemrograman Berorientasi Objek</h1>
     <p>Silakan pilih tugas yang ingin Anda buka:</p>
 
-    <!-- Link ke home.php di folder tugas_1 -->
     <ul>
         <li><a href="tugas_1/home.php">Tugas 1 - home.php</a></li>
+        <li><a href="tugas_2/class_persegi_panjang.php">Tugas 2 - class_persegi_panjang.php</a></li>
+        <li><a href="tugas_2/class_produk.php">Tugas 2 - class_produk.php</a></li>
+        <li><a href="tugas_2/mini_project.php">Tugas 2 - mini_project.php</a></li>
+        <li><a href="tugas_2/manajemen_perpustakaan.php">Tugas 2 - manajemen_perpustakaan.php</a></li>
     </ul>
 </body>
 </html>
