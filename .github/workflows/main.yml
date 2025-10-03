@@ -24,18 +24,19 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git config --global user.name "github-actions[bot]"
 
-          # clone Space ke folder sementara
-          git clone https://huggingface.co/spaces/franzxml/pemrograman_berorientasi_objek /tmp/deploy_space
-          
+          # clone Space dengan full history (tanpa shallow clone)
+          git clone https://huggingface.co/spaces/franzxml/pemrograman_berorientasi_objek /tmp/deploy_space --depth=1
+          cd /tmp/deploy_space
+          git fetch --unshallow || true
+          cd -
+
           # hapus semua isi lama
           rm -rf /tmp/deploy_space/*
           
           # copy isi repo ke Space
-          cp -r . /tmp/deploy_space/
-          
+          rsync -av --exclude=".git" --exclude=".github" ./ /tmp/deploy_space/
+
           cd /tmp/deploy_space
           git add .
           git commit -m "Deploy from GitHub Actions" || echo "No changes to commit"
-          
-          # pakai --force agar menimpa remote branch
           git push --force https://USER:$HF_TOKEN@huggingface.co/spaces/franzxml/pemrograman_berorientasi_objek main
