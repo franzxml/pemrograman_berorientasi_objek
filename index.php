@@ -29,5 +29,10 @@
         <li><a href="pertemuan_5/kode_sebelum.php">Pertemuan 5 - kode_sebelum.php</a></li>
         <li><a href="pertemuan_5/kode_sesudah.php">Pertemuan 5 - kode_sesudah.php</a></li>
     </ul>
+
+    <h2>Pertemuan 6</h2>
+    <ul>
+        <li><a href="pertemuan_6/class_bunga.php">Pertemuan 6 - class_bunga.php</a></li>
+    </ul>
 </body>
 </html>
