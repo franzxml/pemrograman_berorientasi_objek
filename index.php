@@ -34,5 +34,9 @@
     <ul>
         <li><a href="pertemuan_6/class_bunga.php">Pertemuan 6 - class_bunga.php</a></li>
     </ul>
+    <h2>Pertemuan 9</h2>
+    <ul>
+        <li><a href="pertemuan_9/index.php">Pertemuan 9 - index.php</a></li>
+    </ul>
 </body>
 </html>
