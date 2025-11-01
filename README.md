@@ -7,4 +7,6 @@ sdk: docker
 pinned: false
 ---
 
-Contoh sederhana project PHP untuk pembelajaran Pemrograman Berorientasi Objek.
+Repositori ini berisi proyek Pemrograman Berorientasi Objek menggunakan PHP.  
+Dibuat untuk memenuhi tugas kuliah PBO dengan penerapan konsep kelas, objek, enkapsulasi, pewarisan, dan polimorfisme.  
+Struktur proyek dirancang agar modular dan mudah dikembangkan, serta disertai contoh implementasi OOP dalam konteks aplikasi sederhana berbasis PHP.
