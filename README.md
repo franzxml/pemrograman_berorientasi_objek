@@ -1,7 +1,7 @@
 ---
 title: Pemrograman Berorientasi Objek
 emoji: 📘
-colorFrom: red
+colorFrom: blue
 colorTo: purple
 sdk: docker
 pinned: false
